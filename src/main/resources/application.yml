@@ -1,0 +1,17 @@
+resilience4j.circuitbreaker:
+  instances:
+    categoryServiceCircuitBreaker:
+      registerHealthIndicator: true
+      slidingWindowSize: 100
+      minimumNumberOfCalls: 10
+      permittedNumberOfCallsInHalfOpenState: 3
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      waitDurationInOpenState: 10s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
+      
+resilience4j.timelimiter:
+  instances:
+    categoryTimeLimiterCircuitBreaker:
+      timeoutDuration: 2s
+      cancelRunningFuture: true
